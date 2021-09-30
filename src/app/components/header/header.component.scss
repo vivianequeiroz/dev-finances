@@ -1,0 +1,28 @@
+.header {
+	height: 15rem;
+	width: 100vw;
+	display: flex;
+	background: var(--green);
+	color: var(--shape);
+
+	.logo {
+		padding: 2rem 0 0 8rem;
+		font-size: 2rem;
+	}
+
+	.btn-container {
+		padding: 2rem 80rem;
+		flex-direction: end;
+
+		.new-transaction-btn {
+			color: var(--shape);
+			font-weight: bold;
+			font-size: 1rem;
+			width: 12rem;
+			height: 3rem;
+			border: none;
+			background: var(--green-light);
+			border-radius: 0.25rem;
+		}
+	}
+}
