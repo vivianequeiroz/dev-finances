@@ -1,0 +1,16 @@
+.money-card-container {
+	display: flex;
+	justify-content: center;
+	height: 10rem;
+
+	.card-content {
+		width: 22rem;
+		height: 8.5rem;
+		border-radius: 0.25rem;
+	}
+
+	h2 {
+		font-size: 1rem;
+		font-weight: 400;
+	}
+}

@@ -1,1 +1,11 @@
-<p>money-card works!</p>
+<div class="money-card-container">
+	<div class="card-content" *ngFor="let card of cards">
+		<h2 class="card-title">{{ card.title }}</h2>
+		<i class="income-icon">
+			<img [src]="card.src" [alt]="card.alt" />
+		</i>
+		<div class="card-value">
+			{{ card.amount }}
+		</div>
+	</div>
+</div>
