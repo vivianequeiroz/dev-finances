@@ -1,11 +1,15 @@
-<div class="money-card-container">
-	<div class="card-content" *ngFor="let card of cards">
-		<h2 class="card-title">{{ card.title }}</h2>
-		<i class="income-icon">
-			<img [src]="card.src" [alt]="card.alt" />
-		</i>
-		<div class="card-value">
-			{{ card.amount }}
+<section class="money-card-container">
+	<div class="card" *ngFor="let card of cards">
+		<div [class]="card.background">
+			<div class="title-icon">
+				<h2 class="card-title">{{ card.title }}</h2>
+				<i class="icon">
+					<img [src]="card.src" [alt]="card.alt" />
+				</i>
+			</div>
+			<div class="card-value">
+				<p>{{ card.amount }}</p>
+			</div>
 		</div>
 	</div>
-</div>
+</section>
