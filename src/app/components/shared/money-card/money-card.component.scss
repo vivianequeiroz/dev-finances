@@ -38,8 +38,10 @@
 				margin: 1.2rem 1.5rem 1rem 0;
 			}
 
-			.card-value {
-				display: block;
+			.card-value p {
+				color: var(--text-description);
+				font-size: 2.25rem;
+				font-weight: 500;
 			}
 		}
 	}
