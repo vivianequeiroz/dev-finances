@@ -1,17 +1,22 @@
 .money-card-container {
+	position: absolute;
 	display: flex;
 	justify-content: center;
 	height: 10rem;
 	padding: 1.5rem 2rem;
+	top: 7rem;
 
 	.card {
 		width: 22rem;
+		border-radius: 0.4rem;
 		position: space-between;
 		margin: 0 2rem;
 		height: 8.5rem;
 		border-radius: 0.25rem;
 		background: var(--shape);
 		border-radius: 0.25rem;
+		z-index: 10;
+		border-radius: 0.5rem;
 
 		.white-bg {
 			background: var(--shape);
@@ -19,6 +24,14 @@
 
 		.green-bg {
 			background: var(--green-light);
+			color: var(--shape);
+		}
+
+		.white-bg,
+		.green-bg {
+			font-size: 2rem;
+			font-weight: 500;
+			border-radius: 0.5rem;
 		}
 
 		.title-icon {
@@ -26,23 +39,23 @@
 			display: flex;
 
 			.card-title {
-				font-size: 1.5rem;
+				font-size: 1rem;
 				margin: 1.5rem 0 0 1.5rem;
-				font-weight: 400;
-				color: var(--text-body);
+				font-weight: 100;
 			}
 
 			.icon {
 				width: 3rem;
 				height: 3rem;
-				margin: 1.2rem 1.5rem 1rem 0;
+				margin: 0.8rem 1.5rem 1rem 0;
 			}
-
-			.card-value p {
-				color: var(--text-description);
-				font-size: 2.25rem;
-				font-weight: 500;
-			}
+		}
+		.card-amount {
+			display: block;
+			font-size: 2.25rem;
+			font-weight: 500;
+			margin-left: 1.5rem;
+			margin-top: 0.8rem;
 		}
 	}
 }
