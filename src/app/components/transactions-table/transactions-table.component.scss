@@ -1,15 +1,24 @@
 .new-transaction-btn {
-	display: inline-block;
 	border: none;
 	background: transpar;
 	width: 10rem;
 	height: 3rem;
-	margin: 5rem 22rem 0.8rem;
-	//	margin: 4rem 3.7rem;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	position: relative;
+	margin: 3.5rem auto;
+	padding: 0.5rem;
+
 	a {
 		text-decoration: none;
 		font-size: 1rem;
 		color: var(--green-light);
+		display: inline-block;
+		position: relative;
+		z-index: 1;
+		padding: 2em;
+		margin: -2em;
 	}
 }
 
