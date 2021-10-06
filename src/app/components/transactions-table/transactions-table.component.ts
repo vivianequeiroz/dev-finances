@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { StoreTransactionService } from "src/app/services/store-transaction.service";
 
 @Component({
 	selector: "app-transactions-table",
@@ -30,7 +31,7 @@ export class TransactionsTableComponent implements OnInit {
 		},
 	];
 
-	constructor() {}
+	constructor(private _storeTransactionService: StoreTransactionService) {}
 
 	ngOnInit(): void {}
 
