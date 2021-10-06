@@ -1,0 +1,67 @@
+.new-transaction-btn {
+	border: none;
+	background: transpar;
+	width: 10rem;
+	height: 3rem;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	position: relative;
+	margin: 3.5rem auto;
+	padding: 0.5rem;
+
+	a {
+		text-decoration: none;
+		font-size: 1rem;
+		color: var(--green-light);
+		display: inline-block;
+		position: relative;
+		z-index: 1;
+		padding: 2em;
+		margin: -2em;
+	}
+}
+
+.container-transactions {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 73.5rem;
+	margin: -19rem auto;
+
+	.title-transactions,
+	.transactions-infos {
+		background: var(--shape);
+		color: var(--text-body);
+		padding-top: 0.2rem;
+		font-weight: 100;
+		text-align: left;
+		border-radius: 0.25rem;
+		margin-bottom: 0.8rem;
+	}
+
+	.title-transactions {
+		height: 4rem;
+	}
+
+	.transactions-infos {
+		height: 5rem;
+		padding: 0.9rem 0.1rem;
+	}
+
+	.info {
+		width: 24.5rem;
+		padding: 1rem;
+	}
+
+	.date-row {
+		width: 100px;
+	}
+
+	.delete-row {
+		width: 3.5rem;
+		height: 3.5rem;
+		margin-left: 23rem;
+	}
+}

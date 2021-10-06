@@ -1,32 +1,16 @@
 .header {
+	position: relative;
 	width: 100%;
 	top: 0;
 	height: 15rem;
 	background: var(--green);
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 
 	.logo {
-		width: 7.5rem;
+		width: 12rem;
 		height: 1.5rem;
 		margin: 5rem;
 		display: block;
-	}
-
-	.transaction-btn-container {
-		width: 3rem;
-		height: 1.5rem;
-		width: 12rem;
-		height: 3rem;
-		margin: 4rem;
-		.new-transaction-btn {
-			display: inline-block;
-			color: var(--shape);
-			font-weight: bold;
-			font-size: 1rem;
-			border: none;
-			background: var(--green-light);
-			border-radius: 0.25rem;
-		}
 	}
 }

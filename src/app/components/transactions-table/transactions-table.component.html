@@ -1,0 +1,19 @@
+<button class="new-transaction-btn" (click)="openModal()">
+	<a href="#">+ Nova transação</a>
+</button>
+
+<table class="container-transactions">
+	<tr class="title-transactions">
+		<th class="info description-tile">Descrição</th>
+		<th class="info value-title">Valor</th>
+		<th class="info date-title">Data</th>
+	</tr>
+	<tr class="transactions-infos" *ngFor="let transactionInfo of transactionInfos">
+		<td class="info description-row">{{ transactionInfo.description }}</td>
+		<td class="info value-row">{{ transactionInfo.value | currency }}</td>
+		<td class="info date-row">{{ transactionInfo.date | date: "short" }}</td>
+		<td class="info delete-row">
+			<a href="#"><img [src]="transactionInfo.delete" alt="minus button" /></a>
+		</td>
+	</tr>
+</table>
