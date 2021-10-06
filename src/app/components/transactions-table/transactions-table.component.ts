@@ -33,4 +33,8 @@ export class TransactionsTableComponent implements OnInit {
 	constructor() {}
 
 	ngOnInit(): void {}
+
+	openModal(): void {
+		console.log("Open modal works!");
+	}
 }
