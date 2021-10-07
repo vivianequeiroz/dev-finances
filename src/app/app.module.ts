@@ -10,6 +10,7 @@ import { MoneyCardComponent } from "./components/shared/money-card/money-card.co
 import { TransactionsTableComponent } from "./components/transactions-table/transactions-table.component";
 import localePt from "@angular/common/locales/pt";
 import { registerLocaleData } from "@angular/common";
+import { ModalComponent } from "./components/modal/modal.component";
 
 registerLocaleData(localePt, "pt");
 @NgModule({
@@ -19,6 +20,7 @@ registerLocaleData(localePt, "pt");
 		DashboardComponent,
 		MoneyCardComponent,
 		TransactionsTableComponent,
+		ModalComponent,
 	],
 	imports: [BrowserModule, AppRoutingModule],
 	providers: [
