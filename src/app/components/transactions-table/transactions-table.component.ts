@@ -1,4 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, ViewChild } from "@angular/core";
+import { StoreTransactionService } from "src/app/services/store-transaction.service";
+import { ModalComponent } from "../modal/modal.component";
+import { ModalConfig } from "../../models/modal-config.model";
 
 @Component({
 	selector: "app-transactions-table",
@@ -6,35 +9,25 @@ import { Component, OnInit } from "@angular/core";
 	styleUrls: ["./transactions-table.component.scss"],
 })
 export class TransactionsTableComponent implements OnInit {
-	transactionInfos = [
-		{
-			description: "Entradas",
-			value: "R$323,00",
-			date: "20/11/2021",
-			delete:
-				"https://raw.githubusercontent.com/Viviane-Queiroz/dev-finances/main/src/assets/minus.svg",
+	public transactionInfos: any;
+	@ViewChild("modal") private _modalComponent!: ModalComponent;
+	public modalConfig: ModalConfig = {
+		modalTitle: "Title",
+		onDismiss: () => {
+			return true;
 		},
-		{
-			description: "Entradas",
-			value: "R$323,00",
-			date: "20/11/2021",
-			delete:
-				"https://raw.githubusercontent.com/Viviane-Queiroz/dev-finances/main/src/assets/minus.svg",
+		dismissButtonLabel: "Dismiss",
+		onClose: () => {
+			return true;
 		},
-		{
-			description: "Entradas",
-			value: "R$323,00",
-			date: "20/11/2021",
-			delete:
-				"https://raw.githubusercontent.com/Viviane-Queiroz/dev-finances/main/src/assets/minus.svg",
-		},
-	];
+		closeButtonLabel: "Close",
+	};
 
-	constructor() {}
+	constructor(private _storeTransactionService: StoreTransactionService) {}
 
 	ngOnInit(): void {}
 
-	openModal(): void {
-		console.log("Open modal works!");
+	async openModal() {
+		return await this._modalComponent.openModal();
 	}
 }

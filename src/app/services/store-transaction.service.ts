@@ -16,13 +16,14 @@ export class StoreTransactionService {
 	constructor() {
 		this._localStorage = window.localStorage;
 	}
-	setInfo(data: Transaction) {
+
+	setTransaction(data: Transaction) {
 		const jsonData = JSON.stringify(data);
 		this._localStorage.setItem("transaction", jsonData);
 		this._transaction$.next(data);
 	}
 
-	loadInfo() {
+	getTransaction() {
 		const data = JSON.parse(this._localStorage.getItem("transaction")!);
 		this._transaction$.next(data);
 	}
@@ -30,19 +31,11 @@ export class StoreTransactionService {
 	clearInfo() {
 		this._localStorage.removeItem("myData");
 		this._transaction$.next(null!);
-		// non-null assertion operator
+		// ! => non-null assertion operator
 	}
 
-	clearAllLocalStorage() {
-		this._localStorage.clear();
-		this._transaction$.next(null!);
-	}
-
-	// clearAllTransactions(): boolean {
-	// 	if (this.localStorage) {
-	// 		this.localStorage.clear();
-	// 		return true;
-	// 	}
-	// 	return false;
+	// clearAllLocalStorage() {
+	// 	this._localStorage.clear();
+	// 	this._transaction$.next(null!);
 	// }
 }
