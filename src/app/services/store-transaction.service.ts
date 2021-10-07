@@ -34,16 +34,8 @@ export class StoreTransactionService {
 		// ! => non-null assertion operator
 	}
 
-	clearAllLocalStorage() {
-		this._localStorage.clear();
-		this._transaction$.next(null!);
-	}
-
-	// clearAllTransactions(): boolean {
-	// 	if (this.localStorage) {
-	// 		this.localStorage.clear();
-	// 		return true;
-	// 	}
-	// 	return false;
+	// clearAllLocalStorage() {
+	// 	this._localStorage.clear();
+	// 	this._transaction$.next(null!);
 	// }
 }
