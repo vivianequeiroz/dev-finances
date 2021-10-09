@@ -4,7 +4,7 @@
 	--green-light: #49aa26;
 	--text-description: #363f5f;
 	--text-body: #969cb3;
-	--input-background: #e7e9ee;
+	--modal-background: #e7e9ee;
 	--input-border: #d7d7d7;
 	--background: #f0f2f5;
 	--shape: #ffffff;
@@ -50,6 +50,14 @@ button {
 img {
 	display: block;
 	max-width: 100%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type="number"] {
+	-moz-appearance: textfield;
 }
 @media (max-width: 1080px) {
 	html {
