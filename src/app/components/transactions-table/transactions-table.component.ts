@@ -24,7 +24,7 @@ export class TransactionsTableComponent implements OnInit {
 	};
 
 	constructor(private _storeTransactionService: StoreTransactionService) {}
-
+	disableNewTransaction?: boolean;
 	ngOnInit(): void {}
 
 	async openModal() {

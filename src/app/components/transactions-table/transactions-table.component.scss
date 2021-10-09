@@ -24,11 +24,12 @@
 
 .container-transactions {
 	display: flex;
+	position: absolute;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	width: 73.5rem;
-	margin: -19rem auto;
+	margin: -27rem 14rem;
 
 	.title-transactions,
 	.transactions-infos {

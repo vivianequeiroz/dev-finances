@@ -1,7 +1,29 @@
-.modal-header {
+.modal-container {
 	display: flex;
+	flex-direction: column;
 	margin: 0 auto;
-	width: 18.75rem;
+	width: 50rem;
 	height: 25rem;
-	background: red;
+	background: var(--modal-background);
+	margin-top: -54rem;
+	top: -2em;
+	position: relative;
+	padding: 2.5rem;
+	border-radius: 0.25rem;
+}
+
+.modal-header {
+	display: block;
+	font-size: 2.5rem;
+}
+
+.input {
+	height: 2.5rem;
+	margin-bottom: 0.8rem;
+	border: none;
+	padding: 1.25rem;
+}
+
+.input:focus {
+	outline: 0.125rem solid var(--green-light);
 }
