@@ -1,14 +1,15 @@
 .new-transaction-btn {
 	border: none;
 	background: transpar;
-	width: 10rem;
+	width: 14rem;
 	height: 3rem;
 	justify-content: center;
 	display: flex;
 	align-items: center;
 	position: relative;
-	margin: 3.5rem auto;
+	margin: 3.5rem 2rem auto;
 	padding: 0.5rem;
+	background: var(--background);
 
 	a {
 		text-decoration: none;
@@ -24,12 +25,19 @@
 
 .container-transactions {
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: -25rem auto;
+}
+
+.transactions {
+	display: flex;
 	position: absolute;
+	height: 30px;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	width: 73.5rem;
-	margin: -27rem 14rem;
 
 	.title-transactions,
 	.transactions-infos {
@@ -40,6 +48,9 @@
 		text-align: left;
 		border-radius: 0.25rem;
 		margin-bottom: 0.8rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.title-transactions {
@@ -64,5 +75,10 @@
 		width: 3.5rem;
 		height: 3.5rem;
 		margin-left: 23rem;
+	}
+
+	.modal {
+		background: transparent;
+		opacity: 1;
 	}
 }
