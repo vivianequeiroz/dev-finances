@@ -1,20 +1,21 @@
 .modal-container {
 	display: flex;
 	flex-direction: column;
-	margin: 0 auto;
-	width: 50rem;
+	margin: 20rem auto;
+	width: 38rem;
 	height: 25rem;
 	background: var(--modal-background);
-	margin-top: -54rem;
-	top: -2em;
+	margin-top: -50rem;
+	top: -4em;
 	position: relative;
 	padding: 2.5rem;
-	border-radius: 0.25rem;
+	border-radius: 0.4rem;
 }
 
 .modal-header {
 	display: block;
 	font-size: 2.5rem;
+	color: var(--shape);
 }
 
 .input {
@@ -22,8 +23,42 @@
 	margin-bottom: 0.8rem;
 	border: none;
 	padding: 1.25rem;
+	font-size: 1rem;
 }
 
 .input:focus {
 	outline: 0.125rem solid var(--green-light);
+}
+
+.btn-container {
+	display: flex;
+
+	.btn {
+		height: 4rem;
+		width: 15rem;
+		font-size: 1rem;
+		margin: auto;
+		color: var(--shape);
+		border: none;
+		font-weight: bold;
+		border-radius: 0.125rem;
+
+		&.btn-save {
+			background: var(--green-light);
+
+			&.btn-save:hover {
+				background: var(--green-light-hover);
+				transition: ease-in-out 0.3s;
+			}
+		}
+
+		&.btn-cancel {
+			background: var(--red);
+
+			&.btn-cancel:hover {
+				background: var(--red-hover);
+				transition: ease-in-out 0.3s;
+			}
+		}
+	}
 }

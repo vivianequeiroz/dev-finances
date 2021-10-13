@@ -1,7 +1,8 @@
-<button class="new-transaction-btn" (click)="openModal()">
-	<a>+ Nova transação</a>
-</button>
-
+<div class="btn-container">
+	<button class="new-transaction-btn" (click)="openModal()">
+		<a>+ Nova transação</a>
+	</button>
+</div>
 <div class="container-transactions">
 	<table class="transactions">
 		<tr class="title-transactions">
@@ -20,4 +21,6 @@
 	</table>
 </div>
 
-<app-modal class="modal" #modal [modalConfig]="modalConfig"></app-modal>
+<div class="modal-container">
+	<app-modal class="modal" #modal [modalConfig]="modalConfig"></app-modal>
+</div>

@@ -1,12 +1,14 @@
 :root {
 	--green: #2d4a22;
 	--red: #e52e4d;
+	--red-hover: #e52e4dbe;
 	--green-light: #49aa26;
+	--green-light-hover: #49aa26a8;
 	--text-description: #363f5f;
 	--text-body: #969cb3;
-	--modal-background: #e7e9ee;
-	--input-border: #d7d7d7;
+	--modal-background: #d7d7d7;
 	--background: #f0f2f5;
+	--modal-background: #2d4a22c9;
 	--shape: #ffffff;
 }
 
@@ -59,6 +61,7 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
 	-moz-appearance: textfield;
 }
+
 @media (max-width: 1080px) {
 	html {
 		font-size: 93.75%;
