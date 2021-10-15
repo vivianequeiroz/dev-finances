@@ -5,6 +5,8 @@
 	display: flex;
 	position: relative;
 	background: var(--background);
+	width: 10rem;
+	height: 2rem;
 
 	a {
 		text-decoration: none;
@@ -13,8 +15,8 @@
 		display: inline-block;
 		position: relative;
 		z-index: 1;
-		margin: -4rem;
-		padding: 4rem;
+		margin: -2rem;
+		padding: 2rem;
 		width: 20rem;
 	}
 

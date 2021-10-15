@@ -1,18 +1,34 @@
-import { Component, OnInit, Output, ViewChild } from "@angular/core";
+import {
+	AfterViewInit,
+	Component,
+	Input,
+	OnDestroy,
+	OnInit,
+	Output,
+	ViewChild,
+} from "@angular/core";
 import { StoreTransactionService } from "src/app/services/store-transaction.service";
 import { ModalComponent } from "../modal/modal.component";
 import { ModalConfig } from "../../models/modal-config.model";
+import { Observer, Subscription } from "rxjs";
+import { Transaction } from "../../models/transaction.model";
 
 @Component({
 	selector: "app-transactions-table",
 	templateUrl: "./transactions-table.component.html",
 	styleUrls: ["./transactions-table.component.scss"],
 })
-export class TransactionsTableComponent implements OnInit {
+export class TransactionsTableComponent implements OnDestroy {
+	transactionsReceived!: string[];
+
+	subscription!: Subscription;
+	description!: string;
+	amount!: number;
+
 	public transactionInfos: any;
 	@ViewChild("modal") private _modalComponent!: ModalComponent;
 	public modalConfig: ModalConfig = {
-		modalTitle: "Title",
+		modalTitle: "Nova transação",
 		onDismiss: () => {
 			return true;
 		},
@@ -23,9 +39,16 @@ export class TransactionsTableComponent implements OnInit {
 		closeButtonLabel: "Close",
 	};
 
-	constructor(private _storeTransactionService: StoreTransactionService) {}
-	disableNewTransaction?: boolean;
-	ngOnInit(): void {}
+	constructor(private _storeTransactionService: StoreTransactionService) {
+		this.subscription = _storeTransactionService.description$.subscribe((description) => {
+			this.description = description;
+		});
+	}
+
+	ngOnDestroy(): void {
+		// prevent memory leak when component destroyed
+		this.subscription.unsubscribe();
+	}
 
 	async openModal() {
 		return await this._modalComponent.openModal();
