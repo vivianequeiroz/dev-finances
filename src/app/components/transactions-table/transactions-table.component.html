@@ -10,13 +10,16 @@
 			<th class="info value-title">Valor</th>
 			<th class="info date-title">Data</th>
 		</tr>
-		<tr class="transactions-infos" *ngFor="let transactionInfo of transactionInfos">
-			<td class="info description-row">{{ transactionInfo.description }}</td>
-			<td class="info value-row">{{ transactionInfo.value | currency }}</td>
-			<td class="info date-row">{{ transactionInfo.date | date: "short" }}</td>
+		<tr
+			class="transactions-infos"
+			*ngFor="let transactionReceived of transactionsReceived"
+		>
+			<td class="info description-row">{{ description }}</td>
+			<td class="info value-row">{{ amount | currency }}</td>
+			<!-- <td class="info date-row">{{ transactionReceived.date | date: "short" }}</td>
 			<td class="info delete-row">
-				<a href="#"><img [src]="transactionInfo.delete" alt="minus button" /></a>
-			</td>
+				<a href="#"><img [src]="transactionReceived.delete" alt="minus button" /></a>
+			</td> -->
 		</tr>
 	</table>
 </div>
