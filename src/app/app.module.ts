@@ -11,6 +11,7 @@ import { TransactionsTableComponent } from "./components/transactions-table/tran
 import localePt from "@angular/common/locales/pt";
 import { registerLocaleData } from "@angular/common";
 import { ModalComponent } from "./components/modal/modal.component";
+import { FormsModule } from "@angular/forms";
 
 registerLocaleData(localePt, "pt");
 @NgModule({
@@ -22,7 +23,7 @@ registerLocaleData(localePt, "pt");
 		TransactionsTableComponent,
 		ModalComponent,
 	],
-	imports: [BrowserModule, AppRoutingModule],
+	imports: [BrowserModule, AppRoutingModule, FormsModule],
 	providers: [
 		{ provide: LOCALE_ID, useValue: "pt" },
 		{
