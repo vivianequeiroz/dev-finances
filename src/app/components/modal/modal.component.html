@@ -4,31 +4,42 @@
 			<div class="modal-header">
 				<h5 class="modal-title">Nova transação</h5>
 			</div>
-			<div class="modal-body">
-				<div class="inputs">
-					<input
-						type="text"
-						class="input description"
-						name="input description"
-						id="description"
-						placeholder="Descrição"
-					/>
-					<input
-						type="number"
-						class="input amount"
-						name="=amount"
-						id="amount"
-						placeholder="R$ 0,00"
-					/>
+			<form class="form">
+				<div class="modal-body">
+					<div class="inputs">
+						<input
+							type="text"
+							class="input description"
+							name="input description"
+							id="description"
+							[(ngModel)]="description"
+							placeholder="Descrição"
+						/>
+						<input
+							type="number"
+							class="input amount"
+							name="=amount"
+							id="amount"
+							[(ngModel)]="amount"
+							placeholder="R$ 0,00"
+						/>
+					</div>
+					<p></p>
 				</div>
-				<p></p>
-			</div>
-			<div class="btn-container">
-				<button type="button" class="btn btn-cancel" (click)="dismissModal()">
-					Cancelar
-				</button>
-				<button type="button" class="btn btn-save" (click)="closeModal()">Salvar</button>
-			</div>
+				<div class="btn-container">
+					<button type="button" class="btn btn-cancel" (click)="dismissModal()">
+						Cancelar
+					</button>
+					<button
+						type="button"
+						class="btn btn-save"
+						type="submit"
+						(click)="saveTransactionData()"
+					>
+						Salvar
+					</button>
+				</div>
+			</form>
 		</div>
 	</div>
 </ng-template>
