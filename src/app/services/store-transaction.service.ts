@@ -1,41 +1,24 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, Subject } from "rxjs";
 import { Transaction } from "../models/transaction.model";
 
 @Injectable({
 	providedIn: "root",
 })
 export class StoreTransactionService {
-	private _transaction$ = new BehaviorSubject<Transaction>(
-		null!
-	) as BehaviorSubject<Transaction>;
-	public transaction$ = this._transaction$.asObservable();
+	private transactionDescription = new Subject<string>();
+	private transactionAmount = new Subject<number>();
 
-	private _localStorage: Storage;
+	description$ = this.transactionDescription.asObservable();
+	amount$ = this.transactionAmount.asObservable();
 
-	constructor() {
-		this._localStorage = window.localStorage;
+	setTransaction(description: string, amount: number) {
+		this.transactionDescription.next(description);
+		this.transactionAmount.next(amount);
 	}
 
-	setTransaction(data: Transaction) {
-		const jsonData = JSON.stringify(data);
-		this._localStorage.setItem("transaction", jsonData);
-		this._transaction$.next(data);
+	clearTransaction() {
+		this.transactionDescription = null as any;
+		this.transactionAmount = null as any;
 	}
-
-	getTransaction() {
-		const data = JSON.parse(this._localStorage.getItem("transaction")!);
-		this._transaction$.next(data);
-	}
-
-	clearInfo() {
-		this._localStorage.removeItem("myData");
-		this._transaction$.next(null!);
-		// ! => non-null assertion operator
-	}
-
-	// clearAllLocalStorage() {
-	// 	this._localStorage.clear();
-	// 	this._transaction$.next(null!);
-	// }
 }
