@@ -17,9 +17,12 @@
 			<td class="info description-row">{{ description }}</td>
 			<td class="info value-row">{{ amount | currency }}</td>
 			<!-- <td class="info date-row">{{ transactionReceived.date | date: "short" }}</td>
-			<td class="info delete-row">
-				<a href="#"><img [src]="transactionReceived.delete" alt="minus button" /></a>
-			</td> -->
+			<td class="info delete-row"> -->
+			<td>
+				<a href="#"
+					><img [src]="deleteTransactionImg" alt="delete transaction button"
+				/></a>
+			</td>
 		</tr>
 	</table>
 </div>

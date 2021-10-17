@@ -19,6 +19,8 @@ import { Transaction } from "../../models/transaction.model";
 	styleUrls: ["./transactions-table.component.scss"],
 })
 export class TransactionsTableComponent implements OnDestroy {
+	deleteTransactionImg: string = "assets/minus.svg";
+
 	transactionsReceived!: string[];
 
 	subscription!: Subscription;
